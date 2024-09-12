@@ -16,7 +16,7 @@ const carousel1 = [
 export function Hero() {
   return (
     <div className="h-full flex flex-col">
-      <Carousel />
+      <Carousel data={carousel1} />
     </div>
   );
 }
