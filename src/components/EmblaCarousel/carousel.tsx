@@ -1,12 +1,12 @@
 import { EmblaOptionsType } from "embla-carousel";
 import EmblaCarousel from "./EmblaCarousel";
-import "../styles/embla.css";
+import "../../styles/embla.css";
 interface CarouselProps {
   data: {
     id: number;
     url: string;
     thumbImg: string;
-  }[]
+  }[];
 }
 
 const OPTIONS: EmblaOptionsType = {};
