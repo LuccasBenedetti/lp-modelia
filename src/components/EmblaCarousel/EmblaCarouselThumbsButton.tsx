@@ -22,7 +22,7 @@ export const Thumb: React.FC<PropType> = (props) => {
         className="embla-thumbs__slide__number flex flex-col"
       >
         {thumbImg && (
-          <img className="w-full h-full rounded-[10px]" src={thumbImg} alt="" />
+          <img className="w-full h-full rounded-[8px]" src={thumbImg} alt="" />
         )}
       </button>
     </div>

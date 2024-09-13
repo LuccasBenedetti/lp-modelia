@@ -1,4 +1,5 @@
 import logoModelia from "../assets/logo-modelia.svg";
+import { Button } from "./buttons/button";
 
 export function Header() {
   return (
@@ -37,9 +38,7 @@ export function Header() {
             CONTACT US
           </a>
         </div>
-        <button className="bg-gradient-to-r from-[#ce7887] to-[#6d41e2] text-white font-bold py-2 px-4 rounded-sm ml-auto">
-          Improve your images for free
-        </button>
+        <Button title="Improve your images for free" className="ml-auto" />
       </div>
     </header>
   );
