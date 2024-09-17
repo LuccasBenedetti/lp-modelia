@@ -54,13 +54,20 @@ export const Pricing:React.FC = () => {
                         <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Sign up for Free</button>
 
                     </div>
-                    <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                    <div className="relative h-[640px] border-[2px] border-[#5D50FF]  w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                        <div className="absolute top-[-20px] right-[100px] bg-[#5D50FF] rounded-full w-40 h-10 flex items-center justify-center text-white">Most popular</div>
+                        <span className="text-2xl font-bold">Pro</span>
+                        <span className="text-[#6C727F]">
+                            Subscription plan
+                        </span>
 
-                        pro
                     </div>
                     <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                        <span className="text-2xl font-bold">Flexible</span>
+                        <span className="text-[#6C727F]">
+                            Pay as you go
+                        </span>
 
-                        flexible
                     </div>
                 </div>
 
