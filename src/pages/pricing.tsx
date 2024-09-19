@@ -7,6 +7,7 @@ import webIcon from '../assets/icons/web.svg'
 import { ProRadio } from "../components/radios/ProRadio";
 import { FlexibleRadio } from "../components/radios/FlexibleRadio";
 import { FaChevronDown } from "react-icons/fa";
+import logo from '../assets/logo.svg'
 
 export const Pricing:React.FC = () => {
 
@@ -17,7 +18,7 @@ export const Pricing:React.FC = () => {
     return (
         <div className="flex flex-col">
             <header className="h-16 flex items-center justify-center gap-24">
-                <span>img</span>
+                <img src={logo} alt="logo" />
 
                 <div className="flex gap-6 text-[#6C727F]">
                     <a href="">AI E-commerce</a>
