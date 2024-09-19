@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+import androidIcon from '../assets/icons/android.svg'
+import appleIcon from '../assets/icons/apple.svg'
+import apiIcon from '../assets/icons/api.svg'
+import webIcon from '../assets/icons/web.svg'
+
 export const Pricing:React.FC = () => {
 
     const [selectedOption, setSelectedOption] = useState<'standard' | 'custom'>('standard')
@@ -60,14 +65,65 @@ export const Pricing:React.FC = () => {
                         <span className="text-[#6C727F]">
                             Subscription plan
                         </span>
-
+                        <div className="w-full flex justify-between items-center text-[#6C727F] mt-1">
+                            <div className="flex items-center gap-1">
+                                <img src={webIcon} alt="" />
+                                <span>Web</span>
+                            </div>
+                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                            <div className="flex items-center gap-1">
+                                <img src={appleIcon} alt="" />
+                                <span>iOS</span>
+                            </div>
+                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                            <div className="flex items-center gap-1">
+                                <img src={androidIcon} alt="" />
+                                <span>Android</span>
+                            </div>
+                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                            <div className="flex items-center gap-1">
+                                <img src={apiIcon} alt="" />
+                                <span>API</span>
+                            </div>
+                        </div>
+                        <div className="flex items-end mt-5">
+                            <span className="font-bold text-4xl">$0.25</span>
+                            <span>/ Credit</span>
+                        </div>
+                        <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
                     </div>
+
                     <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
                         <span className="text-2xl font-bold">Flexible</span>
                         <span className="text-[#6C727F]">
                             Pay as you go
                         </span>
-
+                        <div className="w-full flex justify-between items-center text-[#6C727F] mt-1">
+                            <div className="flex items-center gap-1">
+                                <img src={webIcon} alt="" />
+                                <span>Web</span>
+                            </div>
+                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                            <div className="flex items-center gap-1">
+                                <img src={appleIcon} alt="" />
+                                <span>iOS</span>
+                            </div>
+                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                            <div className="flex items-center gap-1">
+                                <img src={androidIcon} alt="" />
+                                <span>Android</span>
+                            </div>
+                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                            <div className="flex items-center gap-1">
+                                <img src={apiIcon} alt="" />
+                                <span>API</span>
+                            </div>
+                        </div>
+                        <div className="flex items-end mt-5">
+                            <span className="font-bold text-4xl">$0.80</span>
+                            <span>/ Credit</span>
+                        </div>
+                        <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
                     </div>
                 </div>
 
