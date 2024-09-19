@@ -4,10 +4,15 @@ import androidIcon from '../assets/icons/android.svg'
 import appleIcon from '../assets/icons/apple.svg'
 import apiIcon from '../assets/icons/api.svg'
 import webIcon from '../assets/icons/web.svg'
+import { ProRadio } from "../components/radios/ProRadio";
+import { FlexibleRadio } from "../components/radios/FlexibleRadio";
+import { FaChevronDown } from "react-icons/fa";
 
 export const Pricing:React.FC = () => {
 
     const [selectedOption, setSelectedOption] = useState<'standard' | 'custom'>('standard')
+    const [selectedPayment, setSelectedPayment] = useState<'monthly' | 'yearly'>('monthly')
+
 
     return (
         <div className="flex flex-col">
@@ -59,7 +64,7 @@ export const Pricing:React.FC = () => {
                         <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Sign up for Free</button>
 
                     </div>
-                    <div className="relative h-[640px] border-[2px] border-[#5D50FF]  w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                    <div className="relative h-[640px] border-[2px] border-[#5D50FF] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
                         <div className="absolute top-[-20px] right-[100px] bg-[#5D50FF] rounded-full w-40 h-10 flex items-center justify-center text-white">Most popular</div>
                         <span className="text-2xl font-bold">Pro</span>
                         <span className="text-[#6C727F]">
@@ -91,6 +96,22 @@ export const Pricing:React.FC = () => {
                             <span>/ Credit</span>
                         </div>
                         <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
+
+                        <div className="flex w-full mt-5">
+                            <button onClick={() => setSelectedPayment('monthly')} className={`flex-1 h-10 ${selectedPayment === 'monthly' ? 'border-b-[1px] border-t-[1px] border-t-transparent border-[#384150]' : ''}`}>Pay Monthly</button>
+                            <button onClick={() => setSelectedPayment('yearly')}  className={`flex-1 h-10 ${selectedPayment === 'yearly' ? 'border-b-[1px] border-t-[1px] border-t-transparent border-[#384150]' : ''}`}>Pay Yearly <span className="bg-[#EEF2FF] p-1 rounded-lg text-[#5D50FF]">10% off</span></button>
+                        </div>
+
+                        <ProRadio />
+
+                        <div className="flex w-full items-center justify-between mt-8 gap-4">
+                            <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                            <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
+                            <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                        </div>
+
+                        <button className="mt-auto h-11 w-full bg-[#0F1729] text-white rounded-xl">Subscribe now</button>
+
                     </div>
 
                     <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
@@ -124,6 +145,16 @@ export const Pricing:React.FC = () => {
                             <span>/ Credit</span>
                         </div>
                         <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
+                        
+                        <FlexibleRadio />
+
+                        <div className="flex w-full items-center justify-between mt-8 gap-4">
+                            <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                            <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
+                            <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                        </div>
+
+                        <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Purchase now</button>
                     </div>
                 </div>
 
