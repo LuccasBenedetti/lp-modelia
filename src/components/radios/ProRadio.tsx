@@ -42,7 +42,6 @@ export const ProRadio:React.FC = () => {
                         </button>
                         <span>{value.credits} Credits</span>
                         <span>/ Month</span>
-                        {selectedRadio === value.id && 'opa'}
                     </div>
                     <span>$ {value.price}</span>
                 </div>

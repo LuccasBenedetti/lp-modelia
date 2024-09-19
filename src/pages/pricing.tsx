@@ -104,10 +104,22 @@ export const Pricing:React.FC = () => {
 
                         <ProRadio />
 
-                        <div className="flex w-full items-center justify-between mt-8 gap-4">
+                        <div className="flex w-full items-center justify-between mt-6 gap-4">
                             <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
                             <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
                             <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                        </div>
+
+                        <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
+                        <div className="text-sm text-[#384150] mt-2 flex flex-col gap-2 mx-auto max-w-[220px]">
+                            <span>
+                                Fixed credit allocation each month
+                                (rollover)
+                            </span>
+                            <span>
+                                Download HD images & full-length
+                                videos
+                            </span>
                         </div>
 
                         <button className="mt-auto h-11 w-full bg-[#0F1729] text-white rounded-xl">Subscribe now</button>
@@ -148,10 +160,26 @@ export const Pricing:React.FC = () => {
                         
                         <FlexibleRadio />
 
-                        <div className="flex w-full items-center justify-between mt-8 gap-4">
+                        <div className="flex w-full items-center justify-between mt-6 gap-4">
                             <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
                             <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
                             <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                        </div>
+
+                        <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
+                        <div className="text-sm text-[#384150] mt-4 flex flex-col gap-2 mx-auto max-w-[220px]">
+                            <span>
+                                Fixed credit allocation each month
+                                (rollover)
+                            </span>
+                            <span>
+                                Credits valid for 2 years, reactivate
+                                anytime
+                            </span>
+                            <span>
+                                Download HD images & full-length
+                                videos
+                            </span>
                         </div>
 
                         <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Purchase now</button>
