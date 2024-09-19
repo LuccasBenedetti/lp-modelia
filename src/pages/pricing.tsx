@@ -8,11 +8,23 @@ import { ProRadio } from "../components/radios/ProRadio";
 import { FlexibleRadio } from "../components/radios/FlexibleRadio";
 import { FaChevronDown } from "react-icons/fa";
 import logo from '../assets/logo.svg'
+import { AccordionItem } from "../components/Accordion";
 
 export const Pricing:React.FC = () => {
 
     const [selectedOption, setSelectedOption] = useState<'standard' | 'custom'>('standard')
     const [selectedPayment, setSelectedPayment] = useState<'monthly' | 'yearly'>('monthly')
+
+    const accordionData = [
+        { title: 'What is a credit?', content: 'A credit is...' },
+        { title: 'Is there a free trial available for the product?', content: 'Yes, we offer...' },
+        { title: 'I\'m a subscriber, how can I change my plan?', content: 'To change your plan...' },
+        { title: 'How can I view my invoice?', content: 'You can view your invoice by...' },
+        { title: 'What payment methods are supported?', content: 'We support...' },
+        { title: 'What is the purpose of the Custom form?', content: 'The custom form allows...' },
+        { title: 'Do you offer discounts for NPOs or educational institutions?', content: 'Yes, we provide...' },
+        { title: 'How can I unsubscribe?', content: 'To unsubscribe, follow these steps...' },
+      ];
 
 
     return (
@@ -46,148 +58,179 @@ export const Pricing:React.FC = () => {
                 </div>
 
                 <div className="flex gap-6 mt-20">
-                    <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
-                        <span className="text-2xl font-bold">Hobby</span>
-                        <span className="text-[#6C727F]">
-                            For Personal or Non-commercial Projects
-                        </span>
+                    <div className="flex flex-col items-center gap-4">
+                        <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                            <span className="text-2xl font-bold">Hobby</span>
+                            <span className="text-[#6C727F]">
+                                For Personal or Non-commercial Projects
+                            </span>
 
-                        <span className="mt-6 text-2xl font-bold">Free</span>
+                            <span className="mt-6 text-2xl font-bold">Free</span>
 
-                        <div className="flex text-[14px] max-w-[250px] text-left mx-auto flex-col mt-5 gap-3 items-start justify-center">
-                            <p>Sign up to get 5 free credits</p>
-                            <p> Unlimited free image/video processing
-                            and preview for non-generative features </p>
-                            <p> Unlimited free SD image and video
-                            preview downloads </p>
+                            <div className="flex text-[14px] max-w-[250px] text-left mx-auto flex-col mt-5 gap-3 items-start justify-center">
+                                <p>Sign up to get 5 free credits</p>
+                                <p> Unlimited free image/video processing
+                                and preview for non-generative features </p>
+                                <p> Unlimited free SD image and video
+                                preview downloads </p>
+                            </div>
+
+                            <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Sign up for Free</button>
+
                         </div>
-
-                        <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Sign up for Free</button>
-
+                        <span className="text-xs text-[#384150] text-center max-w-[280px]">Free forever - Recommended for personal use and one-off
+                        projects</span>
                     </div>
-                    <div className="relative h-[640px] border-[2px] border-[#5D50FF] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
-                        <div className="absolute top-[-20px] right-[100px] bg-[#5D50FF] rounded-full w-40 h-10 flex items-center justify-center text-white">Most popular</div>
-                        <span className="text-2xl font-bold">Pro</span>
-                        <span className="text-[#6C727F]">
-                            Subscription plan
+                    <div className="flex flex-col items-center gap-4">
+                        <div className="relative h-[640px] border-[2px] border-[#5D50FF] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                            <div className="absolute top-[-20px] right-[100px] bg-[#5D50FF] rounded-full w-40 h-10 flex items-center justify-center text-white">Most popular</div>
+                            <span className="text-2xl font-bold">Pro</span>
+                            <span className="text-[#6C727F]">
+                                Subscription plan
+                            </span>
+                            <div className="w-full flex justify-between items-center text-[#6C727F] mt-1">
+                                <div className="flex items-center gap-1">
+                                    <img src={webIcon} alt="" />
+                                    <span>Web</span>
+                                </div>
+                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                                <div className="flex items-center gap-1">
+                                    <img src={appleIcon} alt="" />
+                                    <span>iOS</span>
+                                </div>
+                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                                <div className="flex items-center gap-1">
+                                    <img src={androidIcon} alt="" />
+                                    <span>Android</span>
+                                </div>
+                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                                <div className="flex items-center gap-1">
+                                    <img src={apiIcon} alt="" />
+                                    <span>API</span>
+                                </div>
+                            </div>
+                            <div className="flex items-end mt-5">
+                                <span className="font-bold text-4xl">$0.25</span>
+                                <span>/ Credit</span>
+                            </div>
+                            <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
+
+                            <div className="flex w-full mt-5">
+                                <button onClick={() => setSelectedPayment('monthly')} className={`flex-1 h-10 ${selectedPayment === 'monthly' ? 'border-b-[1px] border-t-[1px] border-t-transparent border-[#384150]' : ''}`}>Pay Monthly</button>
+                                <button onClick={() => setSelectedPayment('yearly')}  className={`flex-1 h-10 ${selectedPayment === 'yearly' ? 'border-b-[1px] border-t-[1px] border-t-transparent border-[#384150]' : ''}`}>Pay Yearly <span className="bg-[#EEF2FF] p-1 rounded-lg text-[#5D50FF]">10% off</span></button>
+                            </div>
+
+                            <ProRadio />
+
+                            <div className="flex w-full items-center justify-between mt-6 gap-4">
+                                <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                                <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
+                                <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                            </div>
+
+                            <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
+                            <div className="text-sm text-[#384150] mt-2 flex flex-col gap-2 mx-auto max-w-[220px]">
+                                <span>
+                                    Fixed credit allocation each month
+                                    (rollover)
+                                </span>
+                                <span>
+                                    Download HD images & full-length
+                                    videos
+                                </span>
+                            </div>
+
+                            <button className="mt-auto h-11 w-full bg-[#0F1729] text-white rounded-xl">Subscribe now</button>
+
+                        </div>
+                        <span className="text-xs text-[#384150] text-center max-w-[280px]">
+                            Choose any tier based on your need every month
+                            Rollover credits as long as you're subscribed
                         </span>
-                        <div className="w-full flex justify-between items-center text-[#6C727F] mt-1">
-                            <div className="flex items-center gap-1">
-                                <img src={webIcon} alt="" />
-                                <span>Web</span>
-                            </div>
-                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                            <div className="flex items-center gap-1">
-                                <img src={appleIcon} alt="" />
-                                <span>iOS</span>
-                            </div>
-                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                            <div className="flex items-center gap-1">
-                                <img src={androidIcon} alt="" />
-                                <span>Android</span>
-                            </div>
-                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                            <div className="flex items-center gap-1">
-                                <img src={apiIcon} alt="" />
-                                <span>API</span>
-                            </div>
-                        </div>
-                        <div className="flex items-end mt-5">
-                            <span className="font-bold text-4xl">$0.25</span>
-                            <span>/ Credit</span>
-                        </div>
-                        <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
-
-                        <div className="flex w-full mt-5">
-                            <button onClick={() => setSelectedPayment('monthly')} className={`flex-1 h-10 ${selectedPayment === 'monthly' ? 'border-b-[1px] border-t-[1px] border-t-transparent border-[#384150]' : ''}`}>Pay Monthly</button>
-                            <button onClick={() => setSelectedPayment('yearly')}  className={`flex-1 h-10 ${selectedPayment === 'yearly' ? 'border-b-[1px] border-t-[1px] border-t-transparent border-[#384150]' : ''}`}>Pay Yearly <span className="bg-[#EEF2FF] p-1 rounded-lg text-[#5D50FF]">10% off</span></button>
-                        </div>
-
-                        <ProRadio />
-
-                        <div className="flex w-full items-center justify-between mt-6 gap-4">
-                            <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
-                            <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
-                            <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
-                        </div>
-
-                        <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
-                        <div className="text-sm text-[#384150] mt-2 flex flex-col gap-2 mx-auto max-w-[220px]">
-                            <span>
-                                Fixed credit allocation each month
-                                (rollover)
-                            </span>
-                            <span>
-                                Download HD images & full-length
-                                videos
-                            </span>
-                        </div>
-
-                        <button className="mt-auto h-11 w-full bg-[#0F1729] text-white rounded-xl">Subscribe now</button>
-
                     </div>
 
-                    <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
-                        <span className="text-2xl font-bold">Flexible</span>
-                        <span className="text-[#6C727F]">
-                            Pay as you go
+                    <div className="flex flex-col items-center gap-4">
+                        <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                            <span className="text-2xl font-bold">Flexible</span>
+                            <span className="text-[#6C727F]">
+                                Pay as you go
+                            </span>
+                            <div className="w-full flex justify-between items-center text-[#6C727F] mt-1">
+                                <div className="flex items-center gap-1">
+                                    <img src={webIcon} alt="" />
+                                    <span>Web</span>
+                                </div>
+                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                                <div className="flex items-center gap-1">
+                                    <img src={appleIcon} alt="" />
+                                    <span>iOS</span>
+                                </div>
+                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                                <div className="flex items-center gap-1">
+                                    <img src={androidIcon} alt="" />
+                                    <span>Android</span>
+                                </div>
+                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
+                                <div className="flex items-center gap-1">
+                                    <img src={apiIcon} alt="" />
+                                    <span>API</span>
+                                </div>
+                            </div>
+                            <div className="flex items-end mt-5">
+                                <span className="font-bold text-4xl">$0.80</span>
+                                <span>/ Credit</span>
+                            </div>
+                            <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
+                            
+                            <FlexibleRadio />
+
+                            <div className="flex w-full items-center justify-between mt-6 gap-4">
+                                <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                                <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
+                                <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
+                            </div>
+
+                            <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
+                            <div className="text-sm text-[#384150] mt-4 flex flex-col gap-2 mx-auto max-w-[220px]">
+                                <span>
+                                    Fixed credit allocation each month
+                                    (rollover)
+                                </span>
+                                <span>
+                                    Credits valid for 2 years, reactivate
+                                    anytime
+                                </span>
+                                <span>
+                                    Download HD images & full-length
+                                    videos
+                                </span>
+                            </div>
+
+                            <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Purchase now</button>
+                        </div>
+
+                        <span className="text-xs text-[#384150] text-center max-w-[280px]">
+                            One-time purchase to scale your business
                         </span>
-                        <div className="w-full flex justify-between items-center text-[#6C727F] mt-1">
-                            <div className="flex items-center gap-1">
-                                <img src={webIcon} alt="" />
-                                <span>Web</span>
-                            </div>
-                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                            <div className="flex items-center gap-1">
-                                <img src={appleIcon} alt="" />
-                                <span>iOS</span>
-                            </div>
-                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                            <div className="flex items-center gap-1">
-                                <img src={androidIcon} alt="" />
-                                <span>Android</span>
-                            </div>
-                            <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                            <div className="flex items-center gap-1">
-                                <img src={apiIcon} alt="" />
-                                <span>API</span>
-                            </div>
-                        </div>
-                        <div className="flex items-end mt-5">
-                            <span className="font-bold text-4xl">$0.80</span>
-                            <span>/ Credit</span>
-                        </div>
-                        <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
-                        
-                        <FlexibleRadio />
-
-                        <div className="flex w-full items-center justify-between mt-6 gap-4">
-                            <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
-                            <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
-                            <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
-                        </div>
-
-                        <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
-                        <div className="text-sm text-[#384150] mt-4 flex flex-col gap-2 mx-auto max-w-[220px]">
-                            <span>
-                                Fixed credit allocation each month
-                                (rollover)
-                            </span>
-                            <span>
-                                Credits valid for 2 years, reactivate
-                                anytime
-                            </span>
-                            <span>
-                                Download HD images & full-length
-                                videos
-                            </span>
-                        </div>
-
-                        <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Purchase now</button>
                     </div>
                 </div>
 
+                <div className="flex flex-col w-full">
+                    <h1 className="text-[40px] mx-auto font-bold mt-10">
+                        FAQs about Payment and Pricing 
+                    </h1>
+                    <div className="w-[80%] mx-auto">
+                        {accordionData.map((item, index) => (
+                            <AccordionItem key={index} title={item.title} content={item.content} />
+                        ))}
+                    </div>
+                </div>
             </main>
+            <footer className="bg-[#1F1F1F] w-full mx-auto py-6 flex items-center">
+                <div className="flex flex-col">
+                        <img src={logo} alt="" />
+                </div>
+            </footer>
         </div> 
     )
 }
