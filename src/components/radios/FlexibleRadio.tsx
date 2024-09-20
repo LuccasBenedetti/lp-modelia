@@ -16,17 +16,17 @@ export const FlexibleRadio:React.FC = () => {
     {
         id: 0,
         credits: 5,
-        price: 3.99
+        price: 9.9
     },
     {
         id: 1,
-        credits: 50,
-        price: 24.99
+        credits: 10,
+        price: 19.9
     },
     {
         id: 2,
-        credits: 200,
-        price: 89.99
+        credits: 25,
+        price: 43.9
     }
 
 ]

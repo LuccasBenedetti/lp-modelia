@@ -88,20 +88,10 @@ export const Pricing:React.FC = () => {
                             <span className="text-[#6C727F]">
                                 Subscription plan
                             </span>
-                            <div className="w-full flex justify-between items-center text-[#6C727F] mt-1">
+                            <div className="w-full flex justify-start gap-4 items-center text-[#6C727F] mt-1">
                                 <div className="flex items-center gap-1">
                                     <img src={webIcon} alt="" />
                                     <span>Web</span>
-                                </div>
-                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                                <div className="flex items-center gap-1">
-                                    <img src={appleIcon} alt="" />
-                                    <span>iOS</span>
-                                </div>
-                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                                <div className="flex items-center gap-1">
-                                    <img src={androidIcon} alt="" />
-                                    <span>Android</span>
                                 </div>
                                 <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
                                 <div className="flex items-center gap-1">
@@ -113,7 +103,7 @@ export const Pricing:React.FC = () => {
                                 <span className="font-bold text-4xl">$0.25</span>
                                 <span>/ Credit</span>
                             </div>
-                            <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
+                            <span className="text-xs text-[#6C727F]">Shared credits for web and API</span>
 
                             <div className="flex w-full mt-5">
                                 <button onClick={() => setSelectedPayment('monthly')} className={`flex-1 h-10 ${selectedPayment === 'monthly' ? 'border-b-[1px] border-t-[1px] border-t-transparent border-[#384150]' : ''}`}>Pay Monthly</button>
@@ -155,20 +145,10 @@ export const Pricing:React.FC = () => {
                             <span className="text-[#6C727F]">
                                 Pay as you go
                             </span>
-                            <div className="w-full flex justify-between items-center text-[#6C727F] mt-1">
+                            <div className="w-full flex justify-start gap-4 items-center text-[#6C727F] mt-1">
                                 <div className="flex items-center gap-1">
                                     <img src={webIcon} alt="" />
                                     <span>Web</span>
-                                </div>
-                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                                <div className="flex items-center gap-1">
-                                    <img src={appleIcon} alt="" />
-                                    <span>iOS</span>
-                                </div>
-                                <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
-                                <div className="flex items-center gap-1">
-                                    <img src={androidIcon} alt="" />
-                                    <span>Android</span>
                                 </div>
                                 <div className="h-3 w-[1px] bg-[#E5E7EB]"/>
                                 <div className="flex items-center gap-1">
@@ -180,7 +160,7 @@ export const Pricing:React.FC = () => {
                                 <span className="font-bold text-4xl">$0.80</span>
                                 <span>/ Credit</span>
                             </div>
-                            <span className="text-xs text-[#6C727F]">Shared credits for web, mobile apps and API</span>
+                            <span className="text-xs text-[#6C727F]">Shared credits for web and API</span>
                             
                             <FlexibleRadio />
 
