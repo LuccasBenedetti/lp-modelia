@@ -11,7 +11,7 @@ export const PricingCards:React.FC = () => {
     return (
         <div className="flex gap-6 mt-20">
             <div className="flex flex-col items-center gap-4">
-                <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                <div className="min-h-[650px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
                     <span className="text-2xl font-bold">Hobby</span>
                     <span className="text-[#6C727F]">
                         For Personal or Non-commercial Projects
@@ -34,7 +34,7 @@ export const PricingCards:React.FC = () => {
                 projects</span>
             </div>
             <div className="flex flex-col items-center gap-4">
-                <div className="relative h-[640px] border-[2px] border-[#5D50FF] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                <div className="relative min-h-[650px] h-max border-[2px] border-[#5D50FF] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
                     <div className="absolute top-[-20px] right-[100px] bg-[#5D50FF] rounded-full w-40 h-10 flex items-center justify-center text-white">Most popular</div>
                     <span className="text-2xl font-bold">Pro</span>
                     <span className="text-[#6C727F]">
@@ -64,12 +64,6 @@ export const PricingCards:React.FC = () => {
 
                     <ProRadio />
 
-                    <div className="flex w-full items-center justify-between mt-6 gap-4">
-                        <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
-                        <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
-                        <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
-                    </div>
-
                     <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
                     <div className="text-sm text-[#384150] mt-2 flex flex-col gap-2 mx-auto max-w-[220px]">
                         <span>
@@ -92,7 +86,7 @@ export const PricingCards:React.FC = () => {
             </div>
 
             <div className="flex flex-col items-center gap-4">
-                <div className="h-[640px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
+                <div className="min-h-[650px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
                     <span className="text-2xl font-bold">Flexible</span>
                     <span className="text-[#6C727F]">
                         Pay as you go
@@ -115,12 +109,6 @@ export const PricingCards:React.FC = () => {
                     <span className="text-xs text-[#6C727F]">Shared credits for web and API</span>
                     
                     <FlexibleRadio />
-
-                    <div className="flex w-full items-center justify-between mt-6 gap-4">
-                        <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
-                        <button className="flex text-sm items-center gap-4 text-[#5D50FF]"> View More <FaChevronDown /> </button>
-                        <div className="h-[1px] w-max bg-[#E5E7EB] flex-1"/>
-                    </div>
 
                     <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
                     <div className="text-sm text-[#384150] mt-4 flex flex-col gap-2 mx-auto max-w-[220px]">
