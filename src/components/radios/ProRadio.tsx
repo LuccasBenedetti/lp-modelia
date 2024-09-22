@@ -1,57 +1,6 @@
 import { useState } from "react"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
-
-interface ValuesData {
-    id: number
-    credits: number
-    price: number,
-    priceByImage: number
-}
-
-const values: ValuesData[] = [
-    {
-        id: 0,
-        credits: 10,
-        price: 9,
-        priceByImage: 0.90
-    },
-    {
-        id: 1,
-        credits: 25,
-        price: 21,
-        priceByImage: 0.84
-    },
-    {
-        id: 2,
-        credits: 50,
-        price: 39,
-        priceByImage: 0.78
-    },
-    {
-        id: 3,
-        credits: 100,
-        price: 72,
-        priceByImage: 0.72
-    },
-    {
-        id: 4,
-        credits: 250,
-        price: 165,
-        priceByImage: 0.66
-    },
-    {
-        id: 5,
-        credits: 500,
-        price: 300,
-        priceByImage: 0.60
-    },
-    {
-        id: 6,
-        credits: 1000,
-        price: 540,
-        priceByImage: 0.54
-    },
-]
+import {ValuesData, proValues} from '../../utils/prices'
 
 interface RadioProps {
     onChange: (value: ValuesData) => void
@@ -61,7 +10,7 @@ interface RadioProps {
 export const ProRadio:React.FC<RadioProps> = ({onChange}) => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedValue, setSelectedValue] = useState<ValuesData>(() => values[0]);
+    const [selectedValue, setSelectedValue] = useState<ValuesData>(() => proValues[0]);
 
     function handleChange(value: ValuesData) {
         setSelectedValue(value);
@@ -70,7 +19,7 @@ export const ProRadio:React.FC<RadioProps> = ({onChange}) => {
 
     return (
         <div className="flex flex-col gap-4 w-full justify-between mt-6">
-            {values.map((value, index) =>{
+            {proValues.map((value, index) =>{
                 if(isOpen){
                     return (
                         (

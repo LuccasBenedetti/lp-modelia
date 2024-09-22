@@ -1,27 +1,14 @@
 import React, { useState } from "react";
-import { FlexibleRadio, ValuesData } from "./radios/FlexibleRadio";
+import { FlexibleRadio } from "./radios/FlexibleRadio";
 import apiIcon from '../assets/icons/api.svg'
 import webIcon from '../assets/icons/web.svg'
 import { ProRadio } from "../components/radios/ProRadio";
-
-const initialValuePro: ValuesData = {
-    id: 0,
-    credits: 5,
-    price: 9.9,
-    priceByImage: 0.90
-}
-
-const initialValueFlexible: ValuesData = {
-    id: 0,
-    credits: 5,
-    price: 9.9,
-    priceByImage: 0.90
-}
+import { flexibleValues, proValues, ValuesData } from "../utils/prices";
 
 export const PricingCards:React.FC = () => {
     const [selectedPayment, setSelectedPayment] = useState<'monthly' | 'yearly'>('monthly')
-    const [selectedProValue, setSelectedProValue] = useState<ValuesData>(() => initialValuePro);
-    const [selectedFlexibleValue, setSelectedFlexibleValue] = useState<ValuesData>(() => initialValueFlexible);
+    const [selectedProValue, setSelectedProValue] = useState<ValuesData>(() => proValues[0]);
+    const [selectedFlexibleValue, setSelectedFlexibleValue] = useState<ValuesData>(() => flexibleValues[0]);
 
     return (
         <div className="flex gap-6 mt-20">
@@ -64,10 +51,13 @@ export const PricingCards:React.FC = () => {
                         <div className="flex items-center gap-1">
                             <img src={apiIcon} alt="" />
                             <span>API</span>
+
+
                         </div>
                     </div>
                     <div className="flex items-end mt-5">
-                        <span className="font-bold text-4xl">${(selectedProValue.priceByImage).toFixed(2)}</span>
+                    <span className="font-bold text-4xl">${selectedPayment === 'monthly' ? (selectedProValue.priceByImage).toFixed(2) : (selectedProValue.priceByImage * 0.9).toFixed(2)}</span>
+
                         <span>/ Credit</span>
                     </div>
                     <span className="text-xs text-[#6C727F]">Shared credits for web and API</span>
