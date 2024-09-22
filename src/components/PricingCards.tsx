@@ -68,6 +68,7 @@ export const PricingCards:React.FC = () => {
                     </div>
 
                     <ProRadio
+                        isYearly={selectedPayment === 'yearly'}
                         onChange={(value) => setSelectedProValue(value)}
                     />
 

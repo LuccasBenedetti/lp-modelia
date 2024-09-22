@@ -4,14 +4,15 @@ import {ValuesData, proValues} from '../../utils/prices'
 
 interface RadioProps {
     onChange: (value: ValuesData) => void
+    isYearly: boolean
 }
 
 
-export const ProRadio:React.FC<RadioProps> = ({onChange}) => {
+export const ProRadio:React.FC<RadioProps> = ({onChange, isYearly}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState<ValuesData>(() => proValues[0]);
-
+    
     function handleChange(value: ValuesData) {
         setSelectedValue(value);
         onChange(value);
@@ -33,7 +34,7 @@ export const ProRadio:React.FC<RadioProps> = ({onChange}) => {
                                     <span className="font-bold">{value.credits} Credits</span>
                                     <span className="text-xs">/ Month</span>
                                 </div>
-                                <span>$ {value.price}</span>
+                                <span>${isYearly ? value.yearlyPrice : value.price}</span>
                             </div>
                         )
                     )
@@ -48,7 +49,7 @@ export const ProRadio:React.FC<RadioProps> = ({onChange}) => {
                                     <span className="font-bold">{value.credits} Credits</span>
                                     <span className="text-xs">/ Month</span>
                                 </div>
-                                <span>${value.price}</span>
+                                <span>${isYearly ? value.yearlyPrice : value.price}</span>
                             </div>
                         )
                     }

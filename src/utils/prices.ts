@@ -3,6 +3,7 @@ export interface ValuesData {
   credits: number
   price: number
   priceByImage: number
+  yearlyPrice?: number
 }
 
 
@@ -11,7 +12,7 @@ export const flexibleValues: ValuesData[] = [
       id: 0,
       credits: 5,
       price: 9.9,
-      priceByImage: 0.90
+      priceByImage: 0.90,
   },
   {
       id: 1,
@@ -50,43 +51,50 @@ export const proValues: ValuesData[] = [
       id: 0,
       credits: 10,
       price: 9,
-      priceByImage: 0.90
+      priceByImage: 0.90,
+      yearlyPrice: 97
   },
   {
       id: 1,
       credits: 25,
       price: 21,
-      priceByImage: 0.84
+      priceByImage: 0.84,
+      yearlyPrice: 227
   },
   {
       id: 2,
       credits: 50,
       price: 39,
-      priceByImage: 0.78
+      priceByImage: 0.78,
+      yearlyPrice: 421
   },
   {
       id: 3,
       credits: 100,
       price: 72,
-      priceByImage: 0.72
+      priceByImage: 0.72,
+      yearlyPrice: 778
   },
   {
       id: 4,
       credits: 250,
       price: 165,
-      priceByImage: 0.66
+      priceByImage: 0.66,
+      yearlyPrice: 1782
   },
   {
       id: 5,
       credits: 500,
       price: 300,
-      priceByImage: 0.60
+      priceByImage: 0.60,
+      yearlyPrice: 3240,
   },
   {
       id: 6,
       credits: 1000,
       price: 540,
-      priceByImage: 0.54
+      priceByImage: 0.54,
+      yearlyPrice: 5832,
   },
 ]
 
