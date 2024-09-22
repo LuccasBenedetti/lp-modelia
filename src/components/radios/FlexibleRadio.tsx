@@ -1,52 +1,66 @@
 import { useState } from "react"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 
-interface ValuesData {
+export interface ValuesData {
     id: number
     credits: number
     price: number
+    priceByImage: number
 }
 
-
-export const FlexibleRadio:React.FC = () => {
-
-    const [selectedRadio, setSelectedRadio] = useState(0)
-    const [isOpen, setIsOpen] = useState(false);
-    
-
-    const values: ValuesData[] = [
+const values: ValuesData[] = [
     {
         id: 0,
         credits: 5,
-        price: 9.9
+        price: 9.9,
+        priceByImage: 0.90
     },
     {
         id: 1,
         credits: 10,
-        price: 19.9
+        price: 18.9,
+        priceByImage: 0.84
     },
     {
         id: 2,
         credits: 25,
-        price: 43.9
+        price: 43.9,
+        priceByImage: 0.78
     },
     {
         id: 3,
-        credits: 25,
-        price: 43.9
+        credits: 50,
+        price: 69.9,
+        priceByImage: 0.72
     },
     {
         id: 4,
-        credits: 25,
-        price: 43.9
+        credits: 100,
+        price: 212.9,
+        priceByImage: 0.66
     },
     {
         id: 5,
-        credits: 25,
-        price: 43.9
+        credits: 250,
+        price: 269.9,
+        priceByImage: 0.60
     },
 ]
 
+interface FlexibleRadioProps {
+    onChange: (value: ValuesData) => void
+}
+
+export const FlexibleRadio:React.FC<FlexibleRadioProps> = ({ onChange }) => {
+
+    const [selectedValue, setSelectedValue] = useState<ValuesData>(() => values[0]);
+    const [isOpen, setIsOpen] = useState(false);
+
+    function handleChange(value: ValuesData) {
+        setSelectedValue(value);
+        onChange(value);
+    }
+    
 
     return (
         <div className="flex flex-col gap-4 w-full justify-between mt-6">
@@ -55,7 +69,7 @@ export const FlexibleRadio:React.FC = () => {
                     return (
                         <div className="flex flex-1 justify-between">
                             <div key={value.id} className="flex items-center gap-2">
-                                <button onClick={() => setSelectedRadio(value.id)} className={`flex items-center justify-center w-4 h-4 rounded-full border-[1px] ${selectedRadio === value.id ? 'bg-[#5D50FF]' : 'bg-[#F8FAFC]'}`} >
+                                <button onClick={() => handleChange(value)} className={`flex items-center justify-center w-4 h-4 rounded-full border-[1px] ${selectedValue.id === value.id ? 'bg-[#5D50FF]' : 'bg-[#F8FAFC]'}`} >
                                     <div className="w-[6px] h-[6px] rounded-full bg-[#F8FAFC]"/>
                                 </button>
                                 <span className="font-bold">{value.credits} Credits</span>
@@ -69,13 +83,13 @@ export const FlexibleRadio:React.FC = () => {
                         return (
                             <div className="flex flex-1 justify-between">
                                 <div key={value.id} className="flex items-center gap-2">
-                                    <button onClick={() => setSelectedRadio(value.id)} className={`flex items-center justify-center w-4 h-4 rounded-full border-[1px] ${selectedRadio === value.id ? 'bg-[#5D50FF]' : 'bg-[#F8FAFC]'}`} >
+                                    <button onClick={() => handleChange(value)} className={`flex items-center justify-center w-4 h-4 rounded-full border-[1px] ${selectedValue.id === value.id ? 'bg-[#5D50FF]' : 'bg-[#F8FAFC]'}`} >
                                         <div className="w-[6px] h-[6px] rounded-full bg-[#F8FAFC]"/>
                                     </button>
                                     <span className="font-bold">{value.credits} Credits</span>
                                     <span className="text-xs">/ Month</span>
                                 </div>
-                                <span>$ {value.price}</span>
+                                <span>${value.price}</span>
                             </div>
                         )
                     }

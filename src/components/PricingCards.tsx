@@ -1,12 +1,27 @@
 import React, { useState } from "react";
-import { FlexibleRadio } from "./radios/FlexibleRadio";
+import { FlexibleRadio, ValuesData } from "./radios/FlexibleRadio";
 import apiIcon from '../assets/icons/api.svg'
 import webIcon from '../assets/icons/web.svg'
 import { ProRadio } from "../components/radios/ProRadio";
-import { FaChevronDown } from "react-icons/fa";
+
+const initialValuePro: ValuesData = {
+    id: 0,
+    credits: 5,
+    price: 9.9,
+    priceByImage: 0.90
+}
+
+const initialValueFlexible: ValuesData = {
+    id: 0,
+    credits: 5,
+    price: 9.9,
+    priceByImage: 0.90
+}
 
 export const PricingCards:React.FC = () => {
     const [selectedPayment, setSelectedPayment] = useState<'monthly' | 'yearly'>('monthly')
+    const [selectedProValue, setSelectedProValue] = useState<ValuesData>(() => initialValuePro);
+    const [selectedFlexibleValue, setSelectedFlexibleValue] = useState<ValuesData>(() => initialValueFlexible);
 
     return (
         <div className="flex gap-6 mt-20">
@@ -52,7 +67,7 @@ export const PricingCards:React.FC = () => {
                         </div>
                     </div>
                     <div className="flex items-end mt-5">
-                        <span className="font-bold text-4xl">$0.25</span>
+                        <span className="font-bold text-4xl">${(selectedProValue.priceByImage).toFixed(2)}</span>
                         <span>/ Credit</span>
                     </div>
                     <span className="text-xs text-[#6C727F]">Shared credits for web and API</span>
@@ -62,7 +77,9 @@ export const PricingCards:React.FC = () => {
                         <button onClick={() => setSelectedPayment('yearly')}  className={`flex-1 h-10 ${selectedPayment === 'yearly' ? 'border-b-[1px] border-t-[1px] border-t-transparent border-[#384150]' : ''}`}>Pay Yearly <span className="bg-[#EEF2FF] p-1 rounded-lg text-[#5D50FF]">10% off</span></button>
                     </div>
 
-                    <ProRadio />
+                    <ProRadio
+                        onChange={(value) => setSelectedProValue(value)}
+                    />
 
                     <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
                     <div className="text-sm text-[#384150] mt-2 flex flex-col gap-2 mx-auto max-w-[220px]">
@@ -103,12 +120,14 @@ export const PricingCards:React.FC = () => {
                         </div>
                     </div>
                     <div className="flex items-end mt-5">
-                        <span className="font-bold text-4xl">$0.80</span>
+                        <span className="font-bold text-4xl">${selectedFlexibleValue.priceByImage.toFixed(2)}</span>
                         <span>/ Credit</span>
                     </div>
                     <span className="text-xs text-[#6C727F]">Shared credits for web and API</span>
                     
-                    <FlexibleRadio />
+                    <FlexibleRadio
+                        onChange={(value) => setSelectedFlexibleValue(value)}
+                    />
 
                     <span className="text-sm text-[#384150] mt-4">Everything in Free +</span>
                     <div className="text-sm text-[#384150] mt-4 flex flex-col gap-2 mx-auto max-w-[220px]">
