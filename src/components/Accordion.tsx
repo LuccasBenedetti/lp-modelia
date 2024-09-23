@@ -35,4 +35,3 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) 
     </div>
   );
 };
-

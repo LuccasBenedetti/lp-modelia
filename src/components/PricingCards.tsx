@@ -11,8 +11,8 @@ export const PricingCards:React.FC = () => {
     const [selectedFlexibleValue, setSelectedFlexibleValue] = useState<ValuesData>(() => flexibleValues[0]);
 
     return (
-        <div className="flex gap-6 mt-20">
-            <div className="flex flex-col items-center gap-4">
+        <div className="flex gap-6 mt-20 md:flex-row flex-col">
+            <div className="flex flex-col items-center gap-4 md:scale-100 scale-[60%]">
                 <div className="min-h-[650px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
                     <span className="text-2xl font-bold">Hobby</span>
                     <span className="text-[#6C727F]">
@@ -23,19 +23,13 @@ export const PricingCards:React.FC = () => {
 
                     <div className="flex text-[14px] max-w-[250px] text-left mx-auto flex-col mt-5 gap-3 items-start justify-center">
                         <p>Sign up to get 5 free credits</p>
-                        <p> Unlimited free image/video processing
-                        and preview for non-generative features </p>
-                        <p> Unlimited free SD image and video
-                        preview downloads </p>
                     </div>
-
                     <button className="mt-auto h-11 w-full bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl">Sign up for Free</button>
-
                 </div>
                 <span className="text-xs text-[#384150] text-center max-w-[280px]">Free forever - Recommended for personal use and one-off
                 projects</span>
             </div>
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-4 md:scale-100 scale-[60%]">
                 <div className="relative min-h-[650px] h-max border-[2px] border-[#5D50FF] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
                     <div className="absolute top-[-20px] right-[100px] bg-[#5D50FF] rounded-full w-40 h-10 flex items-center justify-center text-white">Most popular</div>
                     <span className="text-2xl font-bold">Pro</span>
@@ -79,8 +73,7 @@ export const PricingCards:React.FC = () => {
                             (rollover)
                         </span>
                         <span>
-                            Download HD images & full-length
-                            videos
+                            Download HD images
                         </span>
                     </div>
 
@@ -93,7 +86,7 @@ export const PricingCards:React.FC = () => {
                 </span>
             </div>
 
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-4 md:scale-100 scale-[60%]">
                 <div className="min-h-[650px] w-[360px] rounded-3xl bg-white p-8 flex flex-col items-start">
                     <span className="text-2xl font-bold">Flexible</span>
                     <span className="text-[#6C727F]">

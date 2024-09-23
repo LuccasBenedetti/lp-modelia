@@ -1,0 +1,33 @@
+.my-select__control {
+  @apply  border border-gray-300 rounded-lg p-1 shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500;
+}
+
+/* Para os itens da lista */
+.my-select__option {
+  @apply p-2 cursor-pointer hover:bg-indigo-100;
+}
+
+/* Para o placeholder */
+.my-select__placeholder {
+  @apply text-gray-500;
+}
+
+/* Para o valor selecionado */
+.my-select__single-value {
+  @apply text-gray-900;
+}
+
+/* Para a seta de dropdown */
+.my-select__indicator {
+  @apply text-gray-500;
+}
+
+/* Para o menu (dropdown) */
+.my-select__menu {
+  @apply bg-white shadow-lg border border-gray-300;
+}
+
+/* Para o menu quando focado */
+.my-select__menu-list {
+  @apply p-1;
+}

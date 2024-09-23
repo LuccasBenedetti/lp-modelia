@@ -2,8 +2,6 @@ import { useState } from "react"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 import { ValuesData, flexibleValues } from '../../utils/prices'
 
-
-
 interface FlexibleRadioProps {
     onChange: (value: ValuesData) => void
 }
@@ -17,7 +15,6 @@ export const FlexibleRadio:React.FC<FlexibleRadioProps> = ({ onChange }) => {
         setSelectedValue(value);
         onChange(value);
     }
-    
 
     return (
         <div className="flex flex-col gap-4 w-full justify-between mt-6">
